@@ -6,6 +6,9 @@ import * as Speech from 'expo-speech';
 
 import dictionary from '../database';
 
+
+
+
 export default class HomeScreen extends Component{
   constructor() {
     super();
@@ -18,6 +21,7 @@ export default class HomeScreen extends Component{
       definition : ""
     };
   }
+  
 
   onSpeak = ()=>{
     Speech.speak(this.state.word,{
@@ -38,6 +42,7 @@ export default class HomeScreen extends Component{
         "lexicalCategory" : lexicalCategory,
         "definition" : definition
       })
+      
     }
     catch(err){
       alert("Sorry This word is not available for now")
@@ -73,6 +78,8 @@ export default class HomeScreen extends Component{
             }}
             value={this.state.text}
           />
+              
+              
 
           <TouchableOpacity
             style={styles.searchButton}
@@ -137,12 +144,18 @@ export default class HomeScreen extends Component{
                 </View>
               )
               :null
+              
+              
             }
         </View>
       </View>
     )
   }
 }
+
+
+
+
 
 const styles = StyleSheet.create({
   container: {
